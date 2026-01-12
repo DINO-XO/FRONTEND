@@ -124,3 +124,31 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
 }
+/* ===== FINAL OVERRIDES (DO NOT REMOVE) ===== */
+
+.dashboard-layout {
+  display: grid !important;
+  grid-template-columns: 240px 1fr !important;
+  min-height: calc(100vh - 70px);
+  background: #f5f7fb;
+}
+
+.dashboard-content {
+  padding: 32px !important;
+}
+
+.sidebar {
+  background: #ffffff !important;
+  border-right: 1px solid #e5e7eb;
+}
+.stats-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.booking-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
