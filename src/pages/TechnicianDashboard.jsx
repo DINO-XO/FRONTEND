@@ -28,7 +28,7 @@ export default function TechnicianDashboard() {
     return acc;
   }, {});
 
-  // ✅ EXISTING COUNTS (UNCHANGED)
+  // ✅ COUNTS — UNCHANGED
   const counts = {
     ALL: bookings.length,
     COMPLETED: bookings.filter(b => b.status === "COMPLETED").length,
@@ -74,12 +74,14 @@ export default function TechnicianDashboard() {
   };
 
   return (
-    <DashboardLayout title="Technician Dashboard">
+    <DashboardLayout>
+      {/* PAGE TITLE */}
+      <h1 className="tech-title">Technician Dashboard</h1>
 
       {/* FILTER BAR */}
       <div className="filter-bar">
         <div className="filter-buttons">
-          {["ALL","COMPLETED","BOOKED","IN_PROGRESS"].map(s => (
+          {["ALL", "COMPLETED", "BOOKED", "IN_PROGRESS"].map(s => (
             <button
               key={s}
               className={`filter-btn ${statusFilter === s ? "active" : ""}`}
@@ -99,15 +101,17 @@ export default function TechnicianDashboard() {
         />
       </div>
 
-      {/* ✅ CHARTS (UI ONLY) */}
-      <DashboardCharts
-        stats={{
-          total: counts.ALL,
-          completed: counts.COMPLETED,
-          booked: counts.BOOKED,
-          inProgress: counts.IN_PROGRESS
-        }}
-      />
+      {/* ✅ CHARTS — RENDER ONLY IF DATA EXISTS */}
+      {counts.ALL > 0 && (
+        <DashboardCharts
+          stats={{
+            total: counts.ALL,
+            completed: counts.COMPLETED,
+            booked: counts.BOOKED,
+            inProgress: counts.IN_PROGRESS,
+          }}
+        />
+      )}
 
       {/* BOOKINGS */}
       {Object.keys(grouped)
@@ -189,7 +193,6 @@ export default function TechnicianDashboard() {
             </div>
           );
         })}
-
     </DashboardLayout>
   );
 }

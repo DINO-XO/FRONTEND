@@ -20,11 +20,11 @@
   margin-bottom: 28px;
 }
 
-/* NAV */
+/* ===== NAV ===== */
 .dash-nav {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .dash-nav a {
@@ -33,7 +33,6 @@
   font-weight: 600;
   color: #334155;
   text-decoration: none;
-  transition: all 0.25s ease;
 }
 
 .dash-nav a:hover {
@@ -43,23 +42,16 @@
 
 /* ===== MAIN ===== */
 .dash-main {
-  padding: 28px 32px;
+  padding: 20px 24px;
+  overflow-x: hidden;
 }
 
-/* HEADER */
-.dash-header {
-  margin-bottom: 24px;
-}
-
-.dash-header h1 {
-  font-size: 28px;
-  font-weight: 800;
-  color: #0f172a;
-}
-
-/* CONTENT */
-.dash-content {
-  max-width: 1200px;
+/* 🔥 KILL GHOST EMPTY BLOCKS */
+.dash-main > div:empty {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* ===== RESPONSIVE ===== */
