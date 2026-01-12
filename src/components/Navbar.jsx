@@ -18,7 +18,8 @@ export default function Navbar() {
     <nav className="navbar">
       {/* LEFT */}
       <div className="navbar-left">
-        🧪 <span>Medical Lab System</span>
+        <span className="logo-icon">🧪</span>
+        <span className="logo-text">Medical Lab System</span>
       </div>
 
       {/* CENTER */}
